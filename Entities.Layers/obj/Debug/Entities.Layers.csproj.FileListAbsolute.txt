@@ -1,0 +1,15 @@
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.Layers\bin\Debug\Entities.Layers.dll
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.Layers\bin\Debug\Entities.Layers.pdb
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.Layers\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.Layers\bin\Debug\System.Security.AccessControl.dll
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.Layers\bin\Debug\System.Security.Permissions.dll
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.Layers\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.Layers\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.Layers\bin\Debug\System.Security.AccessControl.xml
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.Layers\bin\Debug\System.Security.Permissions.xml
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.Layers\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.Layers\obj\Debug\Entities.Layers.csprojAssemblyReference.cache
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.Layers\obj\Debug\Entities.Layers.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.Layers\obj\Debug\Entities.Layers.csproj.CopyComplete
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.Layers\obj\Debug\Entities.Layers.dll
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.Layers\obj\Debug\Entities.Layers.pdb
