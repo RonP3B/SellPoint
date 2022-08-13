@@ -1,5 +1,4 @@
-﻿using Entities.UI.Windows.ParentForms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,8 +27,9 @@ namespace Entities.UI.Windows
             while (!isOver)
             {
                 //Prueba
-                Application.Run(new FormParent1());
+                Application.Run(new FormCreateEntity());
                 //Prueba
+
                 Application.Run(new FormLogin());
 
                 if (UserAuthenticated)

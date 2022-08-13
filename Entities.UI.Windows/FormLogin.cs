@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls;
 
 namespace Entities.UI.Windows
 {
@@ -16,6 +17,7 @@ namespace Entities.UI.Windows
         public FormLogin()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("MaterialPink");
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
@@ -34,7 +36,19 @@ namespace Entities.UI.Windows
             User = txt_user.Text;
             Pass = txt_password.Text;
 
-            if (ObjClassData.isAuthenticated(User, Pass))
+            if  (User == "" || Pass == "")
+            {
+
+                RadMessageBox.Show(
+                   this,
+                   "Debes llenar los campos",
+                   "Mensaje del sistema",
+                   MessageBoxButtons.OK,
+                   RadMessageIcon.Exclamation
+               );
+            }
+
+            else if (ObjClassData.isAuthenticated(User, Pass))
             {
                 Program.UserAuthenticated = true;
                 Program.UserName = User;
@@ -44,7 +58,14 @@ namespace Entities.UI.Windows
             else
             {
                 Program.UserAuthenticated = false;
-                MessageBox.Show("El usuario es incorrecto");
+
+                RadMessageBox.Show(
+                    this,
+                    "Credenciales incorrectas",
+                    "Mensaje del sistema",
+                    MessageBoxButtons.OK,
+                    RadMessageIcon.Exclamation
+                );
             }
         }
     }

@@ -9,41 +9,41 @@ namespace Entities.Layers.Presentation
 {
     public class ClassPresentation
     {
-        public string FormatDocumentNumber(ClassEntity entity)
+        public string FormatDocumentNumber(string TipoDocumento, long NumeroDocumento)
         {
             string FormatedDocumentNumber = "";
 
-            if (entity.TipoDocumento == "Cédula")
+            if (TipoDocumento == "Cédula")
             {
-                FormatedDocumentNumber = FormatID(entity);
+                FormatedDocumentNumber = FormatID(NumeroDocumento);
             }
 
-            else if (entity.TipoDocumento == "Pasaporte")
+            else if (TipoDocumento == "Pasaporte")
             {
-                FormatedDocumentNumber = FormatPassport(entity);
+                FormatedDocumentNumber = FormatPassport(NumeroDocumento);
             }
 
             else
             {
-                FormatedDocumentNumber = entity.NumeroDocumento.ToString();
+                FormatedDocumentNumber = NumeroDocumento.ToString();
             }
 
 
             return FormatedDocumentNumber;
         }
 
-        private string FormatID(ClassEntity entity)
+        private string FormatID(long NumeroDocumento)
         {
-            string strDocumentNumber = entity.NumeroDocumento.ToString();
+            string strDocumentNumber = NumeroDocumento.ToString();
             string FormatedDocumentNumber = strDocumentNumber.Insert(3, "-");
             FormatedDocumentNumber = FormatedDocumentNumber.Insert(11, "-");
 
             return FormatedDocumentNumber;
         }
 
-        private string FormatPassport(ClassEntity entity)
+        private string FormatPassport(long NumeroDocumento)
         {
-            string strDocumentNumber = entity.NumeroDocumento.ToString();
+            string strDocumentNumber = NumeroDocumento.ToString();
             string FormatedDocumentNumber = "RD" + strDocumentNumber;
 
             return FormatedDocumentNumber;

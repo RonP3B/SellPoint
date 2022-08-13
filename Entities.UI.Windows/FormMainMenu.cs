@@ -15,7 +15,7 @@ namespace Entities.UI.Windows
         public FormMainMenu()
         {
             InitializeComponent();
-            label_user.Text = Program.UserName;
+            label_user.Text = "Usuario: " + Program.UserName;
             label_title.Text = "Hola " + Program.UserName;
         }
 
@@ -28,14 +28,14 @@ namespace Entities.UI.Windows
 
         private void btn_entities_Click(object sender, EventArgs e)
         {
-            FormMaintenance childForm = new FormMaintenance();
-            addDocument("Ventana mantenimiento", childForm);
+            FormMaintenance childForm = new FormMaintenance(this);
+            addDocument("Ventana mantenimiento", childForm, this);
         }
 
-        private void addDocument(string title, Form childForm)
+        public void addDocument(string title, Form childForm, Form parent)
         {
             childForm.Text = title;
-            childForm.MdiParent = this;
+            childForm.MdiParent = parent;
             childForm.Show();
         }
 
@@ -47,7 +47,7 @@ namespace Entities.UI.Windows
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label_hour.Text = DateTime.Now.ToShortTimeString(); 
+            label_hour.Text = "Hora actual: " + DateTime.Now.ToShortTimeString(); 
         }
 
         private void radMenuButtonItem4_Click(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace Entities.UI.Windows
         private void radMenuButtonItem2_Click(object sender, EventArgs e)
         {
             FormAboutUs ObjFormAboutUs = new FormAboutUs();
-            addDocument("Acerca de... ", ObjFormAboutUs);
+            addDocument("Acerca de... ", ObjFormAboutUs, this);
         }
     }
 }

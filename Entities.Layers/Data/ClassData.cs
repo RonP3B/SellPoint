@@ -51,7 +51,8 @@ namespace Entities.Layers.Data
                 ObjSqlConnection.Open();
                 ObjSqlCommand.ExecuteNonQuery();
 
-            } catch(Exception e)
+            }
+            catch (Exception e)
             {
                 System.Diagnostics.Debug.WriteLine(
                         "No fue posible crear la entidad\nExcepción: " + e
@@ -66,7 +67,7 @@ namespace Entities.Layers.Data
         //Metodo para obtener una entidad de la base de datos
         public ClassEntity readEntity(int entityId)
         {
-            
+
             string storedProcedure = "SpEntidadesObtener";
 
             ClassEntity searchedEntity = null;
@@ -90,50 +91,28 @@ namespace Entities.Layers.Data
                     searchedEntity = new ClassEntity();
 
                     searchedEntity.IdEntidad = Convert.ToInt32(row["IdEntidad"]);
-
                     searchedEntity.Descripcion = row["Descripcion"] == null ? "" : row["Descripcion"].ToString();
-
                     searchedEntity.Direccion = row["Direccion"] == null ? "" : row["Direccion"].ToString();
-
                     searchedEntity.Localidad = row["Localidad"] == null ? "" : row["Localidad"].ToString();
-
                     searchedEntity.TipoEntidad = row["TipoEntidad"] == null ? "" : row["TipoEntidad"].ToString();
-
                     searchedEntity.TipoDocumento = row["TipoDocumento"] == null ? "" : row["TipoDocumento"].ToString();
-
                     searchedEntity.NumeroDocumento = Convert.ToInt64(row["NumeroDocumento"]);
-
                     searchedEntity.Telefonos = row["Telefonos"] == null ? "" : row["Telefonos"].ToString();
-
                     searchedEntity.URLPaginaWeb = row["URLPaginaWeb"] == null ? "" : row["URLPaginaWeb"].ToString();
-
                     searchedEntity.URLFacebook = row["URLFacebook"] == null ? "" : row["URLFacebook"].ToString();
-
                     searchedEntity.URLInstagram = (row["URLInstagram"] == null ? "" : row["URLInstagram"].ToString());
-
                     searchedEntity.URLTwitter = row["URLTwitter"] == null ? "" : row["URLTwitter"].ToString();
-
                     searchedEntity.URLTikTok = row["URLTikTok"] == null ? "" : row["URLTikTok"].ToString();
-
                     searchedEntity.CodigoPostal = row["CodigoPostal"] == null ? "" : row["CodigoPostal"].ToString();
-
                     searchedEntity.CoordenadasGPS = row["CoordenadasGPS"] == null ? "" : row["CoordenadasGPS"].ToString();
-
                     searchedEntity.LimiteCredito = Convert.ToInt32(row["LimiteCredito"]);
-
                     searchedEntity.UserNameEntidad = row["UserNameEntidad"] == null ? "" : row["UserNameEntidad"].ToString();
-
                     searchedEntity.PasswordEntidad = row["PasswordEntidad"] == null ? "" : row["PasswordEntidad"].ToString();
-
                     searchedEntity.RolUserEntidad = row["RolUserEntidad"] == null ? "" : row["RolUserEntidad"].ToString();
-
                     searchedEntity.Comentario = row["Comentario"] == null ? "" : row["Comentario"].ToString();
-
                     searchedEntity.Estatus = row["Estatus"] == null ? "" : row["Estatus"].ToString();
-
                     searchedEntity.NoEliminable = Convert.ToInt32(row["NoEliminable"]);
-
-                    searchedEntity.FechaRegistro = row["FechaRegistro"].ToString();          
+                    searchedEntity.FechaRegistro = (DateTime)row["FechaRegistro"];
                 }
                 else
                 {
@@ -248,7 +227,7 @@ namespace Entities.Layers.Data
             try
             {
                 SqlDataAdapter ObjSqlDataAdapter = new SqlDataAdapter(ObjSqlCommand);
-               
+
 
                 DataTable ObjDataTable = new DataTable();
                 ObjSqlDataAdapter.Fill(ObjDataTable);
@@ -300,5 +279,78 @@ namespace Entities.Layers.Data
 
             return result;
         }
+
+        public bool userExist(string user)
+        {
+
+            string storedProcedure = "SpVerificarUsuario";
+            bool result = false;
+
+            SqlConnection ObjSqlConnection = ClassConnectionDB.StringConnectionDB();
+            SqlCommand ObjSqlCommand = new SqlCommand(storedProcedure, ObjSqlConnection);
+            ObjSqlCommand.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                SqlDataAdapter ObjSqlDataAdapter = new SqlDataAdapter(ObjSqlCommand);
+                ObjSqlDataAdapter.SelectCommand.Parameters.Add(new SqlParameter("@Usuario", user));
+
+                DataTable ObjDataTable = new DataTable();
+                ObjSqlDataAdapter.Fill(ObjDataTable);
+
+                result = ObjDataTable.Rows.Count > 0;
+                
+                
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(
+                    "Error al buscar al usuario\nExcepción: " + e
+                );
+            }
+            finally
+            {
+                ObjSqlConnection.Close();
+            }
+
+            return result;
+        }
+
+        public bool documentNumberExist(long documentNumber)
+        {
+
+            string storedProcedure = "SpVerificarNumeroDocumento";
+            bool result = false;
+
+            SqlConnection ObjSqlConnection = ClassConnectionDB.StringConnectionDB();
+            SqlCommand ObjSqlCommand = new SqlCommand(storedProcedure, ObjSqlConnection);
+            ObjSqlCommand.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                SqlDataAdapter ObjSqlDataAdapter = new SqlDataAdapter(ObjSqlCommand);
+                ObjSqlDataAdapter.SelectCommand.Parameters.Add(new SqlParameter("@NumeroDocumento", documentNumber));
+
+                DataTable ObjDataTable = new DataTable();
+                ObjSqlDataAdapter.Fill(ObjDataTable);
+
+                result = ObjDataTable.Rows.Count > 0;
+
+
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(
+                    "Error al buscar al usuario\nExcepción: " + e
+                );
+            }
+            finally
+            {
+                ObjSqlConnection.Close();
+            }
+
+            return result;
+        }
+
     }
 }

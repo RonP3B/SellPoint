@@ -53,7 +53,7 @@ namespace Entities.Layers.Data.Model
 
         public int NoEliminable { get; set; }
 
-        public string FechaRegistro { get; set; }
+        public DateTime FechaRegistro { get; set; }
 
         public ClassEntity()
         {
@@ -67,7 +67,7 @@ namespace Entities.Layers.Data.Model
             string URLTikTok, string CodigoPostal, string CoordenadasGPS,
             long LimiteCredito, string UserNameEntidad, string PasswordEntidad, 
             string RolUserEntidad, string Comentario, string Estatus, int NoEliminable,
-            string FechaRegistro
+            DateTime FechaRegistro
          )
         {
 

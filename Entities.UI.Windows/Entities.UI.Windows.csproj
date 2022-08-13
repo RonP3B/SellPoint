@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.WinControls, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.RadDock, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Material, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.Themes.MaterialPink, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.UI, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="TelerikCommon, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
@@ -92,16 +93,19 @@
     <Compile Include="FormSplash.Designer.cs">
       <DependentUpon>FormSplash.cs</DependentUpon>
     </Compile>
-    <Compile Include="ParentForms\FormParent1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ParentForms\FormParent1.Designer.cs">
-      <DependentUpon>FormParent1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControlFields.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlFields.Designer.cs">
+      <DependentUpon>UserControlFields.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormAboutUs.resx">
       <DependentUpon>FormAboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreateEntity.resx">
+      <DependentUpon>FormCreateEntity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -115,14 +119,14 @@
     <EmbeddedResource Include="FormSplash.resx">
       <DependentUpon>FormSplash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ParentForms\FormParent1.resx">
-      <DependentUpon>FormParent1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlFields.resx">
+      <DependentUpon>UserControlFields.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -172,6 +176,38 @@
   <ItemGroup>
     <None Include="Resources\LogoMain.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Linkedin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LineaMorada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscarLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrarLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crearLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editarLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closeWhite.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
