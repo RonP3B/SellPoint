@@ -28,3 +28,4 @@ C:\Users\USER\source\repos\SellPointSolutionV1\Entities.UI.Windows\obj\Debug\Ent
 C:\Users\USER\source\repos\SellPointSolutionV1\Entities.UI.Windows\obj\Debug\Entities.UI.Windows.FormCreateEntity.resources
 C:\Users\USER\source\repos\SellPointSolutionV1\Entities.UI.Windows\obj\Debug\Entities.UI.Windows.UserControlFields.resources
 C:\Users\USER\source\repos\SellPointSolutionV1\Entities.UI.Windows\bin\Debug\Telerik.WinControls.Themes.Material.dll
+C:\Users\USER\source\repos\SellPointSolutionV1\Entities.UI.Windows\obj\Debug\Entities.UI.Windows.FormUpdateEntity.resources

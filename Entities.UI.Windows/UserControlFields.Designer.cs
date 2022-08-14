@@ -465,7 +465,7 @@
             this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel13.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel13.ForeColor = System.Drawing.Color.MediumVioletRed;
-            this.guna2HtmlLabel13.Location = new System.Drawing.Point(82, 429);
+            this.guna2HtmlLabel13.Location = new System.Drawing.Point(104, 429);
             this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
             this.guna2HtmlLabel13.Size = new System.Drawing.Size(10, 21);
             this.guna2HtmlLabel13.TabIndex = 28;
@@ -549,9 +549,9 @@
             this.label17.ForeColor = System.Drawing.Color.MediumOrchid;
             this.label17.Location = new System.Drawing.Point(9, 433);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(77, 16);
+            this.label17.Size = new System.Drawing.Size(100, 16);
             this.label17.TabIndex = 22;
-            this.label17.Text = "Eliminable";
+            this.label17.Text = "No eliminable";
             // 
             // cmb_status
             // 
@@ -964,6 +964,7 @@
             this.txt_credito.ShadowDecoration.Parent = this.txt_credito;
             this.txt_credito.Size = new System.Drawing.Size(150, 25);
             this.txt_credito.TabIndex = 13;
+            this.txt_credito.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_credito_KeyPress);
             // 
             // label11
             // 
@@ -1004,6 +1005,7 @@
             this.txt_telefono.ShadowDecoration.Parent = this.txt_telefono;
             this.txt_telefono.Size = new System.Drawing.Size(150, 25);
             this.txt_telefono.TabIndex = 9;
+            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
             // 
             // label5
             // 

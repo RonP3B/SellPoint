@@ -7,18 +7,42 @@ using Telerik.WinControls;
 
 namespace Entities.UI.Windows
 {
-    public partial class FormCreateEntity : Form
+    public partial class FormUpdateEntity : Form
     {
-        public FormCreateEntity()
+        ClassData ObjClassData = new ClassData();
+        ClassEntity ObjClassEntity;
+
+        public FormUpdateEntity(string user)
         {
             InitializeComponent();
             RadMessageBox.SetThemeName("MaterialPink");
+
+            //Se obtienen los datos del usuario a actualizar
+            ObjClassEntity = ObjClassData.readEntity(user).Item2;
+
+            //Rellenamos todos los campos con los datos del usuario a actualizar
+            userControlFields1.fillFields(
+                ObjClassEntity.Descripcion, ObjClassEntity.Direccion,
+                ObjClassEntity.Localidad, ObjClassEntity.TipoEntidad,
+                ObjClassEntity.TipoDocumento, ObjClassEntity.NumeroDocumento,
+                ObjClassEntity.Telefonos, ObjClassEntity.URLPaginaWeb, 
+                ObjClassEntity.URLFacebook, ObjClassEntity.URLInstagram,
+                ObjClassEntity.URLTwitter, ObjClassEntity.CodigoPostal,
+                ObjClassEntity.CoordenadasGPS, ObjClassEntity.LimiteCredito, 
+                ObjClassEntity.UserNameEntidad, ObjClassEntity.PasswordEntidad, 
+                ObjClassEntity.RolUserEntidad, ObjClassEntity.Comentario, 
+                ObjClassEntity.Estatus, ObjClassEntity.NoEliminable,
+                ObjClassEntity.URLTikTok 
+           );
+
+            //Volvemos los campos de numero de documento y tipo de documento no editables
+            userControlFields1.documentNoEditable();  
+            
         }
 
         //Función para Verificar de la cantidad de digitos del numero de documento
         private Tuple<bool, string> isValidDocumentNumber(long numeroDocumento, string TipoDocumento)
         {
-
             //El -404 quiere decir nulo/vació
             if (numeroDocumento == -404) return Tuple.Create(true, "0");
 
@@ -49,19 +73,19 @@ namespace Entities.UI.Windows
 
             //Obtención de valores requeridos
             string user = userControlFields1.UserNameEntidad;
-            long numeroDocumento = userControlFields1.NumeroDocumento;
+            long numeroDocumento = ObjClassEntity.NumeroDocumento;
             string descripcion = userControlFields1.Descripcion;
             string direccion = userControlFields1.Direccion;
             string localidad = userControlFields1.Localidad;
-            string telefono = userControlFields1.Telefonos; 
+            string telefono = userControlFields1.Telefonos;
             long credito = userControlFields1.LimiteCredito;
             string password = userControlFields1.PasswordEntidad;
-            string tipoDocumento = userControlFields1.TipoDocumento;
+            string tipoDocumento = ObjClassEntity.TipoDocumento;
 
             //Verificación de que se llenaron los campos requeridos
-            if (user == "" || descripcion == "" || direccion == "" || 
-                localidad == "" || telefono == "" || password == "" ||
-                numeroDocumento == -404 || credito == -404)
+            if (user == "" || descripcion == "" || direccion == "" ||
+               localidad == "" || telefono == "" || password == "" ||
+               numeroDocumento == -404 || credito == -404)
             {
                 RadMessageBox.Show(
                    this,
@@ -120,24 +144,8 @@ namespace Entities.UI.Windows
                 return;
 
             }
-
-            //Verificación de que no exista el numero de documento
-            if (ObjClassData.documentNumberExist(numeroDocumento))
-            {
-                 
-                RadMessageBox.Show(
-                   this,
-                   "El numero del documento ya está registrado.",
-                   "Mensaje del sistema",
-                   MessageBoxButtons.OK,
-                   RadMessageIcon.Exclamation
-                );
-
-                return;
-
-            } 
             
-            //Creacion de la nueva entidad
+            // Creacion de la nueva entidad actualizada
             ClassEntity newEntity = new ClassEntity();
 
             //Asignación de variables
@@ -164,17 +172,17 @@ namespace Entities.UI.Windows
             newEntity.NoEliminable = userControlFields1.NoEliminable;
             newEntity.FechaRegistro = DateTime.Now.Date;
 
-            //Creación de la entidad
-            ObjClassData.createEntity(newEntity);
+            //Se actualiza la entidad
+            ObjClassData.updateEntity(ObjClassEntity.IdEntidad, newEntity);
 
             RadMessageBox.Show(
-               this,
-               "La entidad se ha registrado con éxito.",
+              this,
+               "La entidad se ha editado con éxito.",
                "Mensaje del sistema",
                MessageBoxButtons.OK,
                RadMessageIcon.Info
             );
- 
+
             Close();
         }
     }

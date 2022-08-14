@@ -11,6 +11,7 @@ namespace Entities.Layers.Data
     //Patrón de diseño singleton
     public class ClassConnectionDB
     {
+        //Variable estatica que guardará la conexión
         private static SqlConnection ObjSqlConnection;
 
         private ClassConnectionDB() { }

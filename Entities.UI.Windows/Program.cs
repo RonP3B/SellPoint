@@ -9,9 +9,9 @@ namespace Entities.UI.Windows
     static class Program
     {
 
+        //Variables estaticas pára llevar rastreo del programa
         public static string UserName;
-        public static bool UserAuthenticated, isOver = false;
-
+        public static bool UserAuthenticated, isOver = false, hasEntites = true;
 
         /// <summary>
         /// Punto de entrada principal para la aplicación.
@@ -23,13 +23,15 @@ namespace Entities.UI.Windows
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormSplash());
 
+            //Si no hay datos en la tabla se abrirá el formulario de registro
+            if (!hasEntites)
+            {
+                Application.Run(new FormCreateEntity());
+            }
+
 
             while (!isOver)
             {
-                //Prueba
-                Application.Run(new FormCreateEntity());
-                //Prueba
-
                 Application.Run(new FormLogin());
 
                 if (UserAuthenticated)
@@ -37,10 +39,6 @@ namespace Entities.UI.Windows
                     Application.Run(new FormMainMenu());
                 }
             }
-
-
-            
-
         }
     }
 }

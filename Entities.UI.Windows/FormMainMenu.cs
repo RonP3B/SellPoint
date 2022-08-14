@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls;
 
 namespace Entities.UI.Windows
 {
@@ -17,6 +11,7 @@ namespace Entities.UI.Windows
             InitializeComponent();
             label_user.Text = "Usuario: " + Program.UserName;
             label_title.Text = "Hola " + Program.UserName;
+            RadMessageBox.SetThemeName("MaterialPink");
         }
 
         private void FormMainMenu_Load(object sender, EventArgs e)
@@ -52,8 +47,19 @@ namespace Entities.UI.Windows
 
         private void radMenuButtonItem4_Click(object sender, EventArgs e)
         {
-            Program.isOver = true;
-            Close();
+            DialogResult response = RadMessageBox.Show(
+                this,
+                "Estas seguro que deseas salir del programa",
+                "Mensaje del sistema",
+                MessageBoxButtons.YesNo,
+                RadMessageIcon.Question
+           );
+
+           if (response == DialogResult.Yes)
+           {
+               Program.isOver = true;
+               Close();
+           }
         }
 
         private void radMenuButtonItem3_Click(object sender, EventArgs e)

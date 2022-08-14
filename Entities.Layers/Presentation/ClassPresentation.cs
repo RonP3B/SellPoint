@@ -9,6 +9,7 @@ namespace Entities.Layers.Presentation
 {
     public class ClassPresentation
     {
+        //Metodo para formatear el numero de documento
         public string FormatDocumentNumber(string TipoDocumento, long NumeroDocumento)
         {
             string FormatedDocumentNumber = "";
@@ -32,6 +33,7 @@ namespace Entities.Layers.Presentation
             return FormatedDocumentNumber;
         }
 
+        //Metodo para formatear cedula
         private string FormatID(long NumeroDocumento)
         {
             string strDocumentNumber = NumeroDocumento.ToString();
@@ -41,6 +43,7 @@ namespace Entities.Layers.Presentation
             return FormatedDocumentNumber;
         }
 
+        //Metodo para formatear pasaporte
         private string FormatPassport(long NumeroDocumento)
         {
             string strDocumentNumber = NumeroDocumento.ToString();

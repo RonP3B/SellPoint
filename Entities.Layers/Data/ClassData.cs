@@ -65,11 +65,12 @@ namespace Entities.Layers.Data
         }
 
         //Metodo para obtener una entidad de la base de datos
-        public ClassEntity readEntity(int entityId)
+        public Tuple<DataTable, ClassEntity> readEntity(string user)
         {
 
             string storedProcedure = "SpEntidadesObtener";
 
+            DataTable ObjDataTable = null;
             ClassEntity searchedEntity = null;
 
             SqlConnection ObjSqlConnection = ClassConnectionDB.StringConnectionDB();
@@ -79,13 +80,12 @@ namespace Entities.Layers.Data
             try
             {
                 SqlDataAdapter ObjSqlDataAdapter = new SqlDataAdapter(ObjSqlCommand);
-                ObjSqlDataAdapter.SelectCommand.Parameters
-                    .Add(new SqlParameter("@IDENTIDAD", entityId));
+                ObjSqlDataAdapter.SelectCommand.Parameters.Add(new SqlParameter("@UserName", user));
 
-                DataTable ObjDataTable = new DataTable();
+                ObjDataTable = new DataTable();
                 ObjSqlDataAdapter.Fill(ObjDataTable);
 
-                if ((ObjDataTable.Rows.Count == 1))
+                if (ObjDataTable.Rows.Count == 1)
                 {
                     DataRow row = ObjDataTable.Rows[0];
                     searchedEntity = new ClassEntity();
@@ -113,12 +113,8 @@ namespace Entities.Layers.Data
                     searchedEntity.Estatus = row["Estatus"] == null ? "" : row["Estatus"].ToString();
                     searchedEntity.NoEliminable = Convert.ToInt32(row["NoEliminable"]);
                     searchedEntity.FechaRegistro = (DateTime)row["FechaRegistro"];
-                }
-                else
-                {
-                    throw new Exception();
-                }
 
+                }
             }
             catch (Exception e)
             {
@@ -127,7 +123,7 @@ namespace Entities.Layers.Data
                 );
             }
 
-            return searchedEntity;
+            return Tuple.Create(ObjDataTable, searchedEntity);
         }
 
         //Metodo para actualizar una entidad de la base de datos
@@ -245,6 +241,7 @@ namespace Entities.Layers.Data
 
         }
 
+        //Metodo para autenticar el inicio de sesión
         public bool isAuthenticated(string user, string password)
         {
 
@@ -280,6 +277,7 @@ namespace Entities.Layers.Data
             return result;
         }
 
+        //Metodo para verificar que el usuario exista
         public bool userExist(string user)
         {
 
@@ -316,6 +314,7 @@ namespace Entities.Layers.Data
             return result;
         }
 
+        //Metodo para verificar si el numero de documento existe
         public bool documentNumberExist(long documentNumber)
         {
 

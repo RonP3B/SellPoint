@@ -9,6 +9,8 @@ namespace Entities.Layers.Data.Model
 {
     public class ClassEntity
     {
+        //Propiedades Setters y getters
+
         public int IdEntidad { get; set; }
 
         public string Descripcion { get; set; }
@@ -54,6 +56,8 @@ namespace Entities.Layers.Data.Model
         public int NoEliminable { get; set; }
 
         public DateTime FechaRegistro { get; set; }
+
+        //Constructores
 
         public ClassEntity()
         {

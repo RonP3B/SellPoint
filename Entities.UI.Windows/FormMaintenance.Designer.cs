@@ -35,29 +35,29 @@
             this.radScrollablePanel1 = new Telerik.WinControls.UI.RadScrollablePanel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_cerrarBuscarUsuario = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btn_buscarUsuario = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txt_buscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.dataview = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.materialPinkTheme1 = new Telerik.WinControls.Themes.MaterialPinkTheme();
-            this.btn_cerrarBuscarUsuario = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btn_buscarUsuario = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btn_search = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btn_delete = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btn_update = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btn_create = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.materialPinkTheme1 = new Telerik.WinControls.Themes.MaterialPinkTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radScrollablePanel1)).BeginInit();
             this.radScrollablePanel1.PanelContainer.SuspendLayout();
             this.radScrollablePanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarBuscarUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_buscarUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_search)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_update)).BeginInit();
@@ -126,6 +126,37 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(216, 30);
             this.panel1.TabIndex = 18;
+            this.panel1.Visible = false;
+            // 
+            // btn_cerrarBuscarUsuario
+            // 
+            this.btn_cerrarBuscarUsuario.BackColor = System.Drawing.Color.Violet;
+            this.btn_cerrarBuscarUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btn_cerrarBuscarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cerrarBuscarUsuario.Image = global::Entities.UI.Windows.Properties.Resources.closeWhite;
+            this.btn_cerrarBuscarUsuario.Location = new System.Drawing.Point(1, 3);
+            this.btn_cerrarBuscarUsuario.Name = "btn_cerrarBuscarUsuario";
+            this.btn_cerrarBuscarUsuario.ShadowDecoration.Parent = this.btn_cerrarBuscarUsuario;
+            this.btn_cerrarBuscarUsuario.Size = new System.Drawing.Size(24, 21);
+            this.btn_cerrarBuscarUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_cerrarBuscarUsuario.TabIndex = 20;
+            this.btn_cerrarBuscarUsuario.TabStop = false;
+            this.btn_cerrarBuscarUsuario.Click += new System.EventHandler(this.btn_cerrarBuscarUsuario_Click);
+            // 
+            // btn_buscarUsuario
+            // 
+            this.btn_buscarUsuario.BackColor = System.Drawing.Color.Violet;
+            this.btn_buscarUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btn_buscarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_buscarUsuario.Image = global::Entities.UI.Windows.Properties.Resources.lupam;
+            this.btn_buscarUsuario.Location = new System.Drawing.Point(185, 3);
+            this.btn_buscarUsuario.Name = "btn_buscarUsuario";
+            this.btn_buscarUsuario.ShadowDecoration.Parent = this.btn_buscarUsuario;
+            this.btn_buscarUsuario.Size = new System.Drawing.Size(24, 21);
+            this.btn_buscarUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_buscarUsuario.TabIndex = 19;
+            this.btn_buscarUsuario.TabStop = false;
+            this.btn_buscarUsuario.Click += new System.EventHandler(this.btn_buscarUsuario_Click);
             // 
             // txt_buscar
             // 
@@ -143,6 +174,7 @@
             this.txt_buscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_buscar.HoverState.Parent = this.txt_buscar;
             this.txt_buscar.Location = new System.Drawing.Point(25, 3);
+            this.txt_buscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.PasswordChar = '\0';
             this.txt_buscar.PlaceholderText = "Buscar usuario...";
@@ -161,6 +193,21 @@
             this.label5.Size = new System.Drawing.Size(69, 16);
             this.label5.TabIndex = 17;
             this.label5.Text = "Refrescar";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.DarkViolet;
+            this.guna2PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2PictureBox1.Image = global::Entities.UI.Windows.Properties.Resources.reload;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(11, 393);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(67, 54);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 16;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // dataview
             // 
@@ -199,6 +246,7 @@
             this.dataview.MultiSelect = false;
             this.dataview.Name = "dataview";
             this.dataview.ReadOnly = true;
+            this.dataview.RowHeadersVisible = false;
             this.dataview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataview.Size = new System.Drawing.Size(580, 391);
             this.dataview.TabIndex = 14;
@@ -270,49 +318,6 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Crear";
             // 
-            // btn_cerrarBuscarUsuario
-            // 
-            this.btn_cerrarBuscarUsuario.BackColor = System.Drawing.Color.Violet;
-            this.btn_cerrarBuscarUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btn_cerrarBuscarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cerrarBuscarUsuario.Image = global::Entities.UI.Windows.Properties.Resources.closeWhite;
-            this.btn_cerrarBuscarUsuario.Location = new System.Drawing.Point(1, 3);
-            this.btn_cerrarBuscarUsuario.Name = "btn_cerrarBuscarUsuario";
-            this.btn_cerrarBuscarUsuario.ShadowDecoration.Parent = this.btn_cerrarBuscarUsuario;
-            this.btn_cerrarBuscarUsuario.Size = new System.Drawing.Size(24, 21);
-            this.btn_cerrarBuscarUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_cerrarBuscarUsuario.TabIndex = 20;
-            this.btn_cerrarBuscarUsuario.TabStop = false;
-            // 
-            // btn_buscarUsuario
-            // 
-            this.btn_buscarUsuario.BackColor = System.Drawing.Color.Violet;
-            this.btn_buscarUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btn_buscarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_buscarUsuario.Image = global::Entities.UI.Windows.Properties.Resources.lupam;
-            this.btn_buscarUsuario.Location = new System.Drawing.Point(185, 3);
-            this.btn_buscarUsuario.Name = "btn_buscarUsuario";
-            this.btn_buscarUsuario.ShadowDecoration.Parent = this.btn_buscarUsuario;
-            this.btn_buscarUsuario.Size = new System.Drawing.Size(24, 21);
-            this.btn_buscarUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_buscarUsuario.TabIndex = 19;
-            this.btn_buscarUsuario.TabStop = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.DarkViolet;
-            this.guna2PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2PictureBox1.Image = global::Entities.UI.Windows.Properties.Resources.reload;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(11, 393);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(67, 54);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 16;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
-            // 
             // btn_search
             // 
             this.btn_search.BackColor = System.Drawing.Color.DarkViolet;
@@ -326,6 +331,7 @@
             this.btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_search.TabIndex = 6;
             this.btn_search.TabStop = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // btn_delete
             // 
@@ -387,10 +393,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radScrollablePanel1)).EndInit();
             this.radScrollablePanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarBuscarUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_buscarUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_search)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_update)).EndInit();

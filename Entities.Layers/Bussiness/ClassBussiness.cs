@@ -8,6 +8,7 @@ namespace Entities.Layers.Bussiness
 {
     public class ClassBussiness
     {
+        //Funcion que verifica si el credito dado es mayor o igual a cero
         public static bool validateCredit(long Credits){
             return Credits >= 0;
         }

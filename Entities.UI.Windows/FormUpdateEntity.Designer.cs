@@ -1,6 +1,6 @@
 ﻿namespace Entities.UI.Windows
 {
-    partial class FormCreateEntity
+    partial class FormUpdateEntity
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radScrollablePanel1 = new Telerik.WinControls.UI.RadScrollablePanel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btn_registrar = new Guna.UI2.WinForms.Guna2Button();
+            this.radScrollablePanel1 = new Telerik.WinControls.UI.RadScrollablePanel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btn_registrar = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.userControlFields1 = new Entities.UI.Windows.UserControlFields();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.materialPinkTheme1 = new Telerik.WinControls.Themes.MaterialPinkTheme();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radScrollablePanel1)).BeginInit();
             this.radScrollablePanel1.PanelContainer.SuspendLayout();
             this.radScrollablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = global::Entities.UI.Windows.Properties.Resources.LineaMorada;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(625, 0);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
+            this.guna2PictureBox2.Size = new System.Drawing.Size(46, 611);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox2.TabIndex = 8;
+            this.guna2PictureBox2.TabStop = false;
             // 
             // radScrollablePanel1
             // 
@@ -54,27 +67,27 @@
             // 
             // radScrollablePanel1.PanelContainer
             // 
-            this.radScrollablePanel1.PanelContainer.Controls.Add(this.guna2PictureBox2);
-            this.radScrollablePanel1.PanelContainer.Controls.Add(this.btn_registrar);
             this.radScrollablePanel1.PanelContainer.Controls.Add(this.guna2PictureBox1);
+            this.radScrollablePanel1.PanelContainer.Controls.Add(this.btn_registrar);
+            this.radScrollablePanel1.PanelContainer.Controls.Add(this.guna2PictureBox3);
             this.radScrollablePanel1.PanelContainer.Controls.Add(this.userControlFields1);
             this.radScrollablePanel1.PanelContainer.Controls.Add(this.panel1);
             this.radScrollablePanel1.PanelContainer.Location = new System.Drawing.Point(0, 0);
             this.radScrollablePanel1.PanelContainer.Size = new System.Drawing.Size(674, 611);
             this.radScrollablePanel1.Size = new System.Drawing.Size(674, 611);
-            this.radScrollablePanel1.TabIndex = 3;
+            this.radScrollablePanel1.TabIndex = 9;
             this.radScrollablePanel1.ThemeName = "MaterialPink";
             // 
-            // guna2PictureBox2
+            // guna2PictureBox1
             // 
-            this.guna2PictureBox2.Image = global::Entities.UI.Windows.Properties.Resources.LineaMorada;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(625, 0);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
-            this.guna2PictureBox2.Size = new System.Drawing.Size(46, 611);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox2.TabIndex = 4;
-            this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox1.Image = global::Entities.UI.Windows.Properties.Resources.LineaMorada;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(625, 0);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(46, 611);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 4;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // btn_registrar
             // 
@@ -92,19 +105,19 @@
             this.btn_registrar.ShadowDecoration.Parent = this.btn_registrar;
             this.btn_registrar.Size = new System.Drawing.Size(542, 31);
             this.btn_registrar.TabIndex = 0;
-            this.btn_registrar.Text = "Registrar";
+            this.btn_registrar.Text = "Editar";
             this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
             // 
-            // guna2PictureBox1
+            // guna2PictureBox3
             // 
-            this.guna2PictureBox1.Image = global::Entities.UI.Windows.Properties.Resources.LineaMorada;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 0);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(46, 611);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 3;
-            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox3.Image = global::Entities.UI.Windows.Properties.Resources.LineaMorada;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(12, 0);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
+            this.guna2PictureBox3.Size = new System.Drawing.Size(46, 611);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox3.TabIndex = 3;
+            this.guna2PictureBox3.TabStop = false;
             // 
             // userControlFields1
             // 
@@ -131,29 +144,26 @@
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.DarkViolet;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(196, 4);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(316, 42);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(306, 42);
             this.guna2HtmlLabel1.TabIndex = 0;
-            this.guna2HtmlLabel1.Text = "Registro de entidad";
+            this.guna2HtmlLabel1.Text = "Edición de entidad";
             // 
-            // FormCreateEntity
+            // FormUpdateEntity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSalmon;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(674, 611);
             this.Controls.Add(this.radScrollablePanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(690, 650);
-            this.MinimizeBox = false;
-            this.Name = "FormCreateEntity";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registro de entidad";
+            this.Controls.Add(this.guna2PictureBox2);
+            this.Name = "FormUpdateEntity";
+            this.Text = "FormUpdateEntity";
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.radScrollablePanel1.PanelContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radScrollablePanel1)).EndInit();
             this.radScrollablePanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -161,13 +171,15 @@
         }
 
         #endregion
+
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Telerik.WinControls.UI.RadScrollablePanel radScrollablePanel1;
-        private Telerik.WinControls.Themes.MaterialPinkTheme materialPinkTheme1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2Button btn_registrar;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private UserControlFields userControlFields1;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2Button btn_registrar;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Telerik.WinControls.Themes.MaterialPinkTheme materialPinkTheme1;
     }
 }

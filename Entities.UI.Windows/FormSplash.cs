@@ -1,12 +1,6 @@
 ﻿using Entities.Layers.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Entities.UI.Windows
@@ -36,6 +30,11 @@ namespace Entities.UI.Windows
         {
             timer1.Start();
             ClassConnectionDB.StringConnectionDB();
+            ClassData ObjClassData = new ClassData();
+            DataTable ObjDataTable = ObjClassData.readAllEntities();
+
+            //Verifica si existen registros en la tabla de la base de datos
+            if (ObjDataTable.Rows.Count == 0) Program.hasEntites = false;
         }
     }
 }
